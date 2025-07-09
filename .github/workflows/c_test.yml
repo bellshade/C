@@ -1,0 +1,70 @@
+name: C Testing
+
+on: [push, pull_request]
+  # push:
+  #   branches: [ main ]
+  # pull_request:
+  #   branches: [ main ]
+permissions:
+  contents: write
+
+jobs:
+  TestingUtama:
+    name: c test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v4
+      - name: install requirement
+        run: |
+          sudo apt-get -qq update
+          sudo apt-get -qq install clang-tidy clang-format
+      - name: git
+        run: |
+          git config --global user.name github-actions[bot]
+          git config --global user.email 'github-actions@users.noreply.github.com'
+      - name: format filename
+        run: |
+          wget https://raw.githubusercontent.com/bellshade/unitesting-script/main/filename_formatter.sh
+          chmod +x filename_formatter.sh
+          ./filename_formatter.sh .c, .h
+
+      - name: mengambil file yang telah dirubah
+        run: |
+          git branch
+          git diff --diff-filter=dr --name-only origin/main > git_diff.txt
+          echo "file diubah-- `cat git_diff.txt`"
+
+      - name: Konfigurasi statik lint c
+        run: cmake -B build -S . -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+    
+  build:
+    name: cek compile
+    runs-on: ${{ matrix.os }}
+    needs: [TestingUtama]
+    permissions:
+      pull-requests: write
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - name: build c
+        run: |
+            cmake -B ./build -S .
+            cmake --build build --parallel 4
+      - name: tambah label jika fail
+        uses: actions/github-script@v6
+        if: ${{ failure() && matrix.os == 'ubuntu-latest' && github.event_name == 'pull_request'}}
+        with:
+          script: |
+            github.rest.issue.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['testing fail!']
+            })
