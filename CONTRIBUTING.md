@@ -29,9 +29,9 @@ Dalam ilmu komputer, algoritma dapat didefinisikan sebagai seperangkat perintah 
 ### Prosedur Pelaksanaan Kontribusi
 Secara umum, kontribusi yang dilakukan dapat berupa penambahan algoritma dan perbaikan/perubahan kode. <br>
 Berikut adalah langkah - langkah yang perlu dilakukan untuk menambahkan algoritma:
-1. Memeriksa *pinned* [issue](https://github.com/bellshade/CPP/issues) untuk mendapatkan informasi mengenai daftar algoritma yang akan diimplementasi
+1. Memeriksa *pinned* [issue](https://github.com/bellshade/C/issues) untuk mendapatkan informasi mengenai daftar algoritma yang akan diimplementasi
 2. Memberikan *comment* pada issue yang terkait bahwa kalian akan membuat algoritma tersebut
-3. Fork repositori `bellshade/CPP` ke akun pribadi kalian `userkalian/CPP`
+3. Fork repositori `bellshade/C` ke akun pribadi kalian `userkalian/C`
 4. Membuat kode sesuai dengan persyaratan dan tata cara yang sesuai
 5. Melakukan `Pull Request` pada `branch` yang telah disediakan sesuai dengan issue yang dikerjakan dan sertakan `link` issue pada judul `Pull Request`
 6. Lakukan revisi sesuai dengan review yang diberikan oleh *maintainer*
@@ -39,7 +39,7 @@ Berikut adalah langkah - langkah yang perlu dilakukan untuk menambahkan algoritm
 
 Perbaikan atau perubahan kode dapat dilakukan apabila ditemukan kesalahan pada repositori. Untuk melakukannya, berikut
 langkah - langkah yang perlu dilakukan:
-1. Membuat [issue](https://github.com/bellshade/CPP/issues) sesuai dengan format yang telah ditentukan
+1. Membuat [issue](https://github.com/bellshade/C/issues) sesuai dengan format yang telah ditentukan
 2. Lakukan langkah 3 - 7 pada prosedur penambahan algoritma
 
 ### Persyaratan Teknis
