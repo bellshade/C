@@ -39,6 +39,7 @@ if (NOT HAS_INTTYPES_H)
 endif()
 
 add_subdirectory(math)
+add_subdirectory(algoritma)
 add_subdirectory(hashing)
 
 cmake_policy(SET CMP0054 NEW)
