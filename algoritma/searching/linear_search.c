@@ -52,7 +52,7 @@ void cetak_array(int array[], int jumlah_elemen) {
 int main() {
   int jumlah_elemen = 6; 
   int target = 100;
-  int array[6] = {30, 1, 91,63, 3, 32};
+  int array[6] = { 30, 1, 91,63, 3, 32 };
 
   int hasil = linear_search(array, target, jumlah_elemen);  //  hasil adalah indeks dari kembalian fungsi tersebut.
   
