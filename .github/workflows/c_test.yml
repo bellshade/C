@@ -28,8 +28,11 @@ jobs:
       - name: format filename
         run: |
           wget https://raw.githubusercontent.com/bellshade/unitesting-script/main/filename_formatter.sh
+          wget https://raw.githubusercontent.com/bellshade/unitesting-script/main/markdown_formatter.sh
           chmod +x filename_formatter.sh
+          chmod +x markdown_formatter.sh
           ./filename_formatter.sh .c, .h
+          ./markdown_formatter.sh
 
       - name: mengambil file yang telah dirubah
         run: |
