@@ -9,6 +9,6 @@ foreach( testsourcefile ${APP_SOURCES} )
     if(MATH_LIBRARY)
         target_link_libraries(${testname} ${MATH_LIBRARY})
     endif()
-    install(TARGETS ${testname} DESTINATION "bin/math")
+    install(TARGETS ${testname} DESTINATION "bin/algoritma")
 
 endforeach( testsourcefile ${APP_SOURCES} )
