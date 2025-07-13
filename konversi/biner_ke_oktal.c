@@ -22,14 +22,14 @@
 int tiga_digit(int n) {
   // inisialisasi variabel untuk menyimpan remainder, hasil sementara
   // dan pangkat
-  int r, d = 0, p = 1;
+  int d = 0, p = 1;
 
   // ambil 3 digit terakhir secara berturu-turut
   for (int i = 0; i < 3; i++) {
-    r = n % 10; // ambil digit terakhir
-    d += r * p; // tambahkan ke hasil dengan posisi sesuai pangkat 10
-    p *= 10;    // naikkan pangkat untuk digit berikutnya
-    n /= 10;    // hilangkan digit terakhir
+    int r = n % 10; // ambil digit terakhir
+    d += r * p;     // tambahkan ke hasil dengan posisi sesuai pangkat 10
+    p *= 10;        // naikkan pangkat untuk digit berikutnya
+    n /= 10;        // hilangkan digit terakhir
   }
 
   // return tiga digit terakhir
@@ -37,7 +37,7 @@ int tiga_digit(int n) {
 }
 
 int main() {
-  int angka_biner, d = 0, base = 1, remainder, td, hasil = 0, ord = 1;
+  int angka_biner, base = 1, remainder, td, hasil = 0, ord = 1;
 
   printf("masukkan angka biner: ");
   scanf("%d", &angka_biner);
@@ -53,7 +53,8 @@ int main() {
     }
 
     angka_biner /= 1000; // hapus 3 digit terakhir dari angka biner
-    d = 0, base = 1;     // reset variabel untuk konversi biner ke desimal
+    base = 1;            // reset variabel untuk konversi biner ke desimal
+    int d = 0;
 
     // looping untuk konversi tiga digit biner ke desimal
     while (td > 0) {
