@@ -37,7 +37,7 @@ int tiga_digit(int n) {
 }
 
 int main() {
-  int angka_biner, base = 1, remainder, td, hasil = 0, ord = 1;
+  int angka_biner, remainder, td, hasil = 0, ord = 1;
 
   printf("masukkan angka biner: ");
   scanf("%d", &angka_biner);
@@ -53,8 +53,7 @@ int main() {
     }
 
     angka_biner /= 1000; // hapus 3 digit terakhir dari angka biner
-    base = 1;            // reset variabel untuk konversi biner ke desimal
-    int d = 0;
+    int base = 1, d = 0;            // reset variabel untuk konversi biner ke desimal
 
     // looping untuk konversi tiga digit biner ke desimal
     while (td > 0) {
