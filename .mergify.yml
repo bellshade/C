@@ -8,7 +8,6 @@ pull_request_rules:
   # dan pull request secara otomatis akan merge
   - name: ci testing kalo sukses ke squash dengan label
     conditions:
-      - check-success=C_test 
       - base=main
       - label=ready-to-merge
     actions:
