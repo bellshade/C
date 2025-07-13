@@ -103,7 +103,7 @@ int median(int arr[],int n){
  * @return nilai modus atau frekuensi terbanyak dalam array
  */
 int modus(int arr[],int n,int mx){
-    int *freq = malloc((mx + 1) * sizeof(int));
+    int *freq = calloc(mx + 1,sizeof(int));
 
     for(size_t i = 0;i < n;i++){
         freq[arr[i]]++;
