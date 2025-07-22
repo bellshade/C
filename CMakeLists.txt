@@ -8,7 +8,7 @@ project(bellshade_C
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED YES)
 if (MSVC)
-  add_compile_definitions(_CRT_SECURE_NO_WARNIGS)
+    add_compile_definitions(_CRT_SECURE_NO_WARNINGS)
 endif (MSVC)
 
 find_library(MATH_LIBRARY m)
@@ -43,6 +43,7 @@ add_subdirectory(hashing)
 add_subdirectory(konversi)
 add_subdirectory(algoritma/sorting)
 add_subdirectory(algoritma/searching)
+add_subdirectory(project/NeuralNetwork)
 
 cmake_policy(SET CMP0054 NEW)
 cmake_policy(SET CMP0057 NEW)
